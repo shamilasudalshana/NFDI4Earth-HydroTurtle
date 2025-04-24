@@ -38,7 +38,7 @@ This tool was built using column mappings from the **[LamaH-CE dataset](https://
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/NFDI4Earth-HydroTurtle.git
+git clone https://github.com/shamilasudalshana/NFDI4Earth-HydroTurtle.git
 cd NFDI4Earth-HydroTurtle
 ```
 
@@ -136,4 +136,5 @@ pip install -r requirements.txt
 
 ## 🙌 Acknowledgments
 Built using the [LamaH-CE Dataset](https://essd.copernicus.org/articles/13/4529/2021/) 
+
 Part of the [NFDI4Earth](https://www.nfdi4earth.de/) initiative
