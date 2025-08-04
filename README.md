@@ -98,7 +98,7 @@ File | Purpose
 
 Check out the app in action:
 
-[![HydroTurtle Demo](https://img.icons8.com/ios-filled/50/video-playlist.png)](./HydroTurtle_demo_2025_08_04.webm)
+[![Watch the demo](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://youtu.be/Pv9qUvmHaUU)
 
 ## 🧪 Example RDF Output
 
