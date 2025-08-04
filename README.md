@@ -94,6 +94,12 @@ File | Purpose
 `rdf_prefixes.json` | Declares RDF namespace prefixes
 `mapping_time.json` | Specifies how to extract time from the CSV
 
+### 🎬 Demo
+
+Check out the app in action:
+
+[![HydroTurtle Demo](https://img.icons8.com/ios-filled/50/video-playlist.png)](./HydroTurtle_demo_2025_08_04.webm)
+
 ## 🧪 Example RDF Output
 
 Given a row:
