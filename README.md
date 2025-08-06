@@ -2,9 +2,9 @@
 
 **HydroTurtle** is a Python tool for converting hydrological data (like time series and catchment attributes) into RDF triples in [Turtle (`.ttl`)](https://www.w3.org/TR/turtle/) format.
 
-It uses semantic web standards such as **SOSA**, **SSN**, and **QUDT** to generate machine-readable linked data.
+It uses Semantic Web vocabularies such as **SOSA**, **SSN**, and **QUDT** to generate a knowledge graph of hydrological observations.
 
-This tool was built using column mappings from the **[LamaH-CE dataset](https://essd.copernicus.org/articles/13/4529/2021/)**, but it's extendable to other datasets with proper mapping configuration.
+This tool was built using column mappings from the **[LamaH-CE dataset](https://essd.copernicus.org/articles/13/4529/2021/)**. It can be extended to other datasets through adaptations of the attribute-to-vocabulary mappings.
 
 ---
 
@@ -17,7 +17,37 @@ This tool was built using column mappings from the **[LamaH-CE dataset](https://
 - Command-line tool and Streamlit app included
 - Built using modular and reusable Python functions
 
----
+### 🎬 Demo
+
+Check out the app in action:
+
+[![Watch the demo](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://youtu.be/Pv9qUvmHaUU)
+
+## 🧪 Example RDF Output
+
+Given a row:
+```csv
+ID,YYYY,MM,DD,2m_temp_mean
+32,1981,01,19,-7.1
+```
+
+HydroTurtle generates:
+```turtle
+n4e_hyd:observation_1_c_32 rdf:type sosa:Observation ;
+	sosa:observedProperty n4e_hyd:AirTemperature2mMean ;
+	sosa:hasFeatureOfInterest n4e_hyd:catchment_32 ;
+	sosa:madeBySensor n4e_hyd:sensor_32 ;
+	sosa:memberOf sosa:observationCollection_32 ;
+	sosa:resultTime "1981-01-19T00:00:00Z"^^xsd:dateTime ;
+	sosa:hasResult [ 
+                    rdf:type  qudt:QuantityValue;
+                    qudt:numericValue  "-7.1"^^xsd:decimal;
+                    qudt:unit  unit:DEG_C] .
+```
+
+
+
+
 
 ## 🧩 Included Files
 
@@ -75,6 +105,7 @@ python convert_csv_with_coords.py
 ### 🖥️ Streamlit App
 Start the web interface:
 ```bash
+pip install -r requirements.txt
 streamlit run streamlit_app.py
 ```
 
@@ -94,53 +125,8 @@ File | Purpose
 `rdf_prefixes.json` | Declares RDF namespace prefixes
 `mapping_time.json` | Specifies how to extract time from the CSV
 
-### 🎬 Demo
-
-Check out the app in action:
-
-[![Watch the demo](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://youtu.be/Pv9qUvmHaUU)
-
-## 🧪 Example RDF Output
-
-Given a row:
-```csv
-ID,YYYY,MM,DD,2m_temp_mean
-32,1981,01,19,-7.1
-```
-
-HydroTurtle generates:
-```turtle
-n4e_hyd:observation_1_c_32 rdf:type sosa:Observation ;
-	sosa:observedProperty n4e_hyd:AirTemperature2mMean ;
-	sosa:hasFeatureOfInterest n4e_hyd:catchment_32 ;
-	sosa:madeBySensor n4e_hyd:sensor_32 ;
-	sosa:memberOf sosa:observationCollection_32 ;
-	sosa:resultTime "1981-01-19T00:00:00Z"^^xsd:dateTime ;
-	sosa:hasResult [ 
-                    rdf:type  qudt:QuantityValue;
-                    qudt:numericValue  "-7.1"^^xsd:decimal;
-                    qudt:unit  unit:DEG_C] .
-```
-
-## 📄 Requirements
-Dependencies (already listed in requirements.txt):
-```shell
-pandas>=1.4
-numpy>=1.21
-python-dateutil>=2.8
-streamlit>=1.20
-pyproj>=3.4
-geopandas>=0.13
-shapely>=2.0
-fiona>=1.8
-```
-Install via:
-```bash
-pip install -r requirements.txt
-```
-
 
 ## 🙌 Acknowledgments
 Built using the [LamaH-CE Dataset](https://essd.copernicus.org/articles/13/4529/2021/) 
 
-Part of the [NFDI4Earth](https://www.nfdi4earth.de/) initiative
+The work was funded by the German Research Foundation through the project [NFDI4Earth](https://www.nfdi4earth.de/) (DFG project no. 460036893).
