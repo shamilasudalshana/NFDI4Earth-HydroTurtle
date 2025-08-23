@@ -25,8 +25,6 @@ Check out the app in action:
 https://github.com/user-attachments/assets/126b819b-b3ca-4e59-a1ea-3d7d6c71e052
 
 
-[![Watch the demo](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://youtu.be/Pv9qUvmHaUU)
-
 ## 🧪 Example RDF Output
 
 Given a row:
