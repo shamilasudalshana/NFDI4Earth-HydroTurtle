@@ -6,6 +6,8 @@ It uses Semantic Web vocabularies such as **SOSA**, **SSN**, and **QUDT** to gen
 
 This tool was built using column mappings from the **[LamaH-CE dataset](https://essd.copernicus.org/articles/13/4529/2021/)**. It can be extended to other datasets through adaptations of the attribute-to-vocabulary mappings.
 
+This is a legacy project, see the current active projet [here](https://github.com/shamilasudalshana/NFDI4Earth-HydroTurtle2)
+
 ---
 
 ## 🌟 Features
