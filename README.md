@@ -35,10 +35,10 @@ ID,YYYY,MM,DD,2m_temp_mean
 
 HydroTurtle generates:
 ```turtle
-n4e_hyd:observation_1_c_32 rdf:type sosa:Observation ;
-	sosa:observedProperty n4e_hyd:AirTemperature2mMean ;
-	sosa:hasFeatureOfInterest n4e_hyd:catchment_32 ;
-	sosa:madeBySensor n4e_hyd:sensor_32 ;
+hyobs:observation_1_c_32 rdf:type sosa:Observation ;
+	sosa:observedProperty hyobs:AirTemperature2mMean ;
+	sosa:hasFeatureOfInterest hyobs:catchment_32 ;
+	sosa:madeBySensor hyobs:sensor_32 ;
 	sosa:memberOf sosa:observationCollection_32 ;
 	sosa:resultTime "1981-01-19T00:00:00Z"^^xsd:dateTime ;
 	sosa:hasResult [ 
